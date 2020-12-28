@@ -100,7 +100,25 @@ namespace FileUploadAPI.Controllers
             }
         }
 
-
+        [HttpGet]
+        [Route("removeimage/{id}")]
+        public object removeImage(int id)
+        {
+            try
+            {
+                using (DemoEntities db = new DemoEntities())
+                {
+                    var queryResults = db.UserImages.Find(id);
+                    db.UserImages.Remove(queryResults);
+                    db.SaveChanges();
+                    return new { status = StatusCodes.OK.code, msg = "Success! Image Record Removed"};
+                }
+            }
+            catch (System.Exception e)
+            {
+                return new { status = StatusCodes.NotFound.code, msg = e.InnerException };
+            }
+        }
     }
 }
 

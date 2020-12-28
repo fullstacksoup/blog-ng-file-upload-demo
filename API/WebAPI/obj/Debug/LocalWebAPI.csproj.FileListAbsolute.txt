@@ -472,4 +472,3 @@ C:\PROJECTS\FULLSTACKSOUP BLOG\blog-ng-file-upload-demo\API\WebAPI\obj\Debug\Loc
 C:\PROJECTS\FULLSTACKSOUP BLOG\blog-ng-file-upload-demo\API\WebAPI\obj\Debug\LocalWebAPI.csproj.CopyComplete
 C:\PROJECTS\FULLSTACKSOUP BLOG\blog-ng-file-upload-demo\API\WebAPI\obj\Debug\FileUploadAPI.dll
 C:\PROJECTS\FULLSTACKSOUP BLOG\blog-ng-file-upload-demo\API\WebAPI\obj\Debug\FileUploadAPI.pdb
-C:\PROJECTS\FULLSTACKSOUP BLOG\blog-ng-file-upload-demo\API\WebAPI\obj\Debug\LocalWebAPI.csprojAssemblyReference.cache

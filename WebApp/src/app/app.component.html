@@ -1,21 +1,9 @@
 
-<div class="grid-container">
-  <div class="left-col">
-
-    <mat-card class="center-card">
-      <h3>Simple Array</h3>
-
-      <simple-autocomplete-field></simple-autocomplete-field>
-    </mat-card>
+<div class="row">
+  <div class="col-lg-6 col-md-12 ml-5">
+    <file-form (onSubmitForm)="onImageAdded($event)"></file-form>
   </div>
-
-  <div class="right-col">
-
-    <mat-card class="center-card">
-      <h3>JSON Data</h3>
-      <json-autocomplete-field></json-autocomplete-field>
-
-    </mat-card>
-
+  <div class="col-lg-5 col-md-12 ml-3 mr-3">
+    <file-table></file-table>
   </div>
 </div>

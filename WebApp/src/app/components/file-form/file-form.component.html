@@ -1,3 +1,63 @@
-<p>
-  file-form works!
-</p>
+<div class="card" >
+  <div class="card-body">
+    <div class="row mb-5">
+      <div class="col-5">
+        <h5>Upload Image</h5>
+        <form class="post-form" method="POST" (ngSubmit)="onSubmit($event)" [formGroup]="imageForm" >
+
+          <div class="row">
+            <div class="col-6">
+
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+                <label>Label</label>
+                <input type="text" class="form-control" placeholder="Label" name="Label" formControlName="label">
+              </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12">
+              <label>Description</label>
+              <textarea class="form-control"  formControlName="description"></textarea>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-6">
+              <div class="custom-file-upload">
+                <label for="file-upload" class="custom-file-upload1">
+                  <i class="fa fa-cloud-upload"></i> Choose File
+                </label>
+                <input #file  type="file" id="file-upload" accept='image/*' (change)="preview(file.files)" class="form-control"  formControlName="image">
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col">
+                <button class="btn btn-primary" type="submit" [disabled]="!imageForm.valid">Save Image & Title</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="col-6">
+        <div class="row">
+          <div class="col-4 text-left">
+            <div *ngIf="Size !== 0">
+              File Name: {{Filename}}<br><br>
+              Size: {{Size}}<br><br>
+              Format: {{MimeType}}<br><br>
+            </div>
+          </div>
+          <div class="col-5 text-left">
+            <img mat-card-image [src]="imgURL"  alt="Photo" style="height: auto; width: 250px; object-fit: cover;" *ngIf="imgURL">
+            <img mat-card-image [src]="imageURL"  alt="Photo" style="height: auto; width: 250px; object-fit: cover;" *ngIf="!imgURL">
+            <br>
+          </div>
+        </div>
+    </div>
+</div>
+
+

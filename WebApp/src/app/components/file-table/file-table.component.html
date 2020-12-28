@@ -1,3 +1,27 @@
-<p>
-  file-table works!
-</p>
+<div class="card" >
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Label</th>
+          <th>Description</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let img of imagesArr">
+          <tr>
+            <td>
+              <image-container [imgMimeType]="img.MimeType" [imgData]="img.ImageData"></image-container>
+
+            </td>
+            <td>{{img.Label}}</td>
+            <td>{{img.Description}}</td>
+            <td><button type="button" class="btn btn-danger" (click)="onDeleteImage(img.ImageId)">Remove</button> </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>

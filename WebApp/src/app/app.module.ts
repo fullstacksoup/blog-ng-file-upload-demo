@@ -14,8 +14,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // *****************************************************************************
 // A N G U L A R   M A T E R I A L
 // *****************************************************************************
-// Not imported - Using Bootstrap instead
-// To enable Material Libraries just uncomment the line below
 // Note: when importing another module within the root then you will have to specify the module name when
 // creating a component.
 // Example: ng generate component your_component_name --module=app
@@ -33,12 +31,14 @@ import { ImageFileService } from './services/image-file.service';
 
 import { FileFormComponent } from './components/file-form/file-form.component';
 import { FileTableComponent } from './components/file-table/file-table.component';
+import { ImageContainerComponent } from './components/image-container/image-container.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FileFormComponent,
-    FileTableComponent
+    FileTableComponent,
+    ImageContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +47,7 @@ import { FileTableComponent } from './components/file-table/file-table.component
     HttpClientModule,
     HttpClientJsonpModule,
     FormsModule,
+  //   MaterialModule,
     ReactiveFormsModule,
   ],
   providers: [ImageFileService],

@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
 
+interface ResultsObj {
+  status?: string;
+  msg?: string;
+  data?: any;
+}
 @Injectable({
   providedIn: 'root'
 })
@@ -43,4 +49,19 @@ export class ImageFileService {
     });
     return status;
   }
+
+
+  getImages(): Observable<ResultsObj> {
+    const URL = `${environment.baseUrl}/api/userimage/getdbimagelist`;
+    console.log(URL);
+    return this.http.get(URL);
+  }
+
+
+  removeImage(id: number): Observable<ResultsObj> {
+    const URL = `${environment.baseUrl}/api/userimage/removeimage/${id}`;
+    console.log(URL);
+    return this.http.get(URL);
+  }
+
 }
